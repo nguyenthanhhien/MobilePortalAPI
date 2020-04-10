@@ -1,0 +1,13 @@
+E:\SourceCode\MobilePortalAPI\Business\bin\Release\netcoreapp3.1\Business.deps.json
+E:\SourceCode\MobilePortalAPI\Business\bin\Release\netcoreapp3.1\Business.runtimeconfig.json
+E:\SourceCode\MobilePortalAPI\Business\bin\Release\netcoreapp3.1\Business.runtimeconfig.dev.json
+E:\SourceCode\MobilePortalAPI\Business\bin\Release\netcoreapp3.1\Business.dll
+E:\SourceCode\MobilePortalAPI\Business\bin\Release\netcoreapp3.1\Business.pdb
+E:\SourceCode\MobilePortalAPI\Business\bin\Release\netcoreapp3.1\DTO.dll
+E:\SourceCode\MobilePortalAPI\Business\bin\Release\netcoreapp3.1\DTO.pdb
+E:\SourceCode\MobilePortalAPI\Business\obj\Release\netcoreapp3.1\Business.csprojAssemblyReference.cache
+E:\SourceCode\MobilePortalAPI\Business\obj\Release\netcoreapp3.1\Business.AssemblyInfoInputs.cache
+E:\SourceCode\MobilePortalAPI\Business\obj\Release\netcoreapp3.1\Business.AssemblyInfo.cs
+E:\SourceCode\MobilePortalAPI\Business\obj\Release\netcoreapp3.1\Business.csproj.CopyComplete
+E:\SourceCode\MobilePortalAPI\Business\obj\Release\netcoreapp3.1\Business.dll
+E:\SourceCode\MobilePortalAPI\Business\obj\Release\netcoreapp3.1\Business.pdb

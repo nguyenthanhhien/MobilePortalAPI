@@ -1,0 +1,8 @@
+E:\SourceCode\MobilePortalAPI\DTO\bin\Release\netcoreapp3.1\DTO.deps.json
+E:\SourceCode\MobilePortalAPI\DTO\bin\Release\netcoreapp3.1\DTO.dll
+E:\SourceCode\MobilePortalAPI\DTO\bin\Release\netcoreapp3.1\DTO.pdb
+E:\SourceCode\MobilePortalAPI\DTO\obj\Release\netcoreapp3.1\DTO.csprojAssemblyReference.cache
+E:\SourceCode\MobilePortalAPI\DTO\obj\Release\netcoreapp3.1\DTO.AssemblyInfoInputs.cache
+E:\SourceCode\MobilePortalAPI\DTO\obj\Release\netcoreapp3.1\DTO.AssemblyInfo.cs
+E:\SourceCode\MobilePortalAPI\DTO\obj\Release\netcoreapp3.1\DTO.dll
+E:\SourceCode\MobilePortalAPI\DTO\obj\Release\netcoreapp3.1\DTO.pdb
