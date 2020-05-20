@@ -70,6 +70,10 @@ namespace MobilePortalAPI.Controllers
             }
             catch (Exception ex)
             {
+                if (ex.InnerException != null && !string.IsNullOrEmpty(ex.InnerException.Message) && ex.InnerException.Message.Contains("permission was denied"))
+                {
+                    return new BadRequestObjectResult("You don't have permission to do this");
+                }
                 return new BadRequestObjectResult("Can not get dealer application configuration");
             }
         }
@@ -90,6 +94,10 @@ namespace MobilePortalAPI.Controllers
             }
             catch (Exception ex)
             {
+                if (ex.InnerException != null && !string.IsNullOrEmpty(ex.InnerException.Message) && ex.InnerException.Message.Contains("permission was denied"))
+                {
+                    return new BadRequestObjectResult("You don't have permission to do this");
+                }
                 return new BadRequestObjectResult("Can not get dealer application configuration");
             }
         }
