@@ -1,11 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.Entity.Validation;
 using System.Linq;
 using System.Text;
 using AutoMapper;
 using Business.Models;
 using DTO;
 using Microsoft.AspNetCore.Http;
+using Microsoft.Data.SqlClient;
 
 namespace Business
 {
@@ -102,7 +104,7 @@ namespace Business
             }
             catch (Exception ex)
             {
-                return ex.Message;
+                throw ex;
             }
         }
         public string Update(DealerApplicationConfigurationDTO data)
@@ -126,7 +128,7 @@ namespace Business
             }
             catch (Exception ex)
             {
-                return ex.Message;
+                throw ex;
             }
         }
 

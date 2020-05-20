@@ -41,6 +41,8 @@ namespace MobilePortalAPI
             services.Add(new ServiceDescriptor(typeof(IAuthorizationService), typeof(AuthorizationService), ServiceLifetime.Transient));
             services.Add(new ServiceDescriptor(typeof(IDealerApplicationConfigurationService), typeof(DealerApplicationConfigurationService), ServiceLifetime.Transient));
             services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
+            services.AddControllers()
+            .AddJsonOptions(opts => opts.JsonSerializerOptions.PropertyNamingPolicy = null);
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -51,7 +53,7 @@ namespace MobilePortalAPI
                 app.UseDeveloperExceptionPage();
             }
 
-            app.UseHttpsRedirection();
+            //app.UseHttpsRedirection();
 
             app.UseRouting();
             // global cors policy
