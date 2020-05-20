@@ -1,0 +1,9 @@
+# Build and Release Folders
+bin/
+obj/
+
+# Other files and folders
+*.suo
+
+.vs/
+packages/
