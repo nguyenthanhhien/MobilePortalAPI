@@ -7,10 +7,14 @@ namespace MobilePortalAPI.ViewModel
 {
     public class SearchEngineViewModel
     {
-        public int id { get; set; }
-        public int? page { get; set; }
-        public int? itemsPerPage { get; set; }
-        public string sort { get; set; }
-        public string search { get; set; }
+        public object id { get; set; }
+        public int PageNumber { get; set; }
+        public int PageSize { get; set; }
+        public int StartIndex { get; set; }
+        public string Sort { get; set; }
+        public string Search { get; set; }
+        public int Type { get; set; }
+        public int StatusCode { get; set; }
+        public string Filters { get; set; }
     }
 }

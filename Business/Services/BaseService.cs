@@ -22,7 +22,7 @@ namespace Business
 
         public void SetConnectionString(string commonServerName, string username, string password)
         {
-            var connectionString = Utilities.CreateCommonConnection(commonServerName, username, password);
+            var connectionString = CommonMethods.CreateCommonConnection(commonServerName, username, password);
             CommonContext = new CommonContext(connectionString);
         }
     }

@@ -13,7 +13,7 @@ namespace Business
         }
         public int Authenticate(string commonServerName, string userId, string password)
         {
-            var connectionString = Utilities.CreateCommonConnection(commonServerName, userId, password);
+            var connectionString = CommonMethods.CreateCommonConnection(commonServerName, userId, password);
             CommonContext = new CommonContext(connectionString);
             try
             {

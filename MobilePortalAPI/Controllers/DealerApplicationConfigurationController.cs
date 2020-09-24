@@ -10,6 +10,7 @@ using Microsoft.AspNetCore.Http;
 using DTO;
 using AutoMapper;
 using Microsoft.Extensions.Configuration;
+using System.Net.Http;
 
 namespace MobilePortalAPI.Controllers
 {
@@ -32,13 +33,13 @@ namespace MobilePortalAPI.Controllers
         public IActionResult GetAll([FromQuery]SearchEngineViewModel query)
         {
             try
-            {
-                return new OkObjectResult(_dealerAppConfigService.GetAll(query.page.Value, query.itemsPerPage.Value, query.sort, query.search));
-
+            {       
+                var dataDto = _mapper.Map<SearchEngineDTO>(query);
+                return new OkObjectResult(_dealerAppConfigService.GetAll(dataDto));
             }
             catch (Exception ex)
             {
-                return new BadRequestObjectResult("Can not get dealer application configuration");
+                return new BadRequestObjectResult(ex.Message);
             }
         }
 
@@ -53,7 +54,7 @@ namespace MobilePortalAPI.Controllers
             }
             catch (Exception ex)
             {
-                return new BadRequestObjectResult("Can not get dealer application configuration");
+                return new BadRequestObjectResult(ex.Message);
             }
         }
 
@@ -62,6 +63,10 @@ namespace MobilePortalAPI.Controllers
         {
             try
             {
+                if(string.IsNullOrWhiteSpace(data.DealerId) || string.IsNullOrWhiteSpace(data.Application))
+                {
+                    return new BadRequestObjectResult("Invalid data");
+                }
                 var dataDto = _mapper.Map<DealerApplicationConfigurationDTO>(data);
                 var result = _dealerAppConfigService.Add(dataDto);
                 if (!string.IsNullOrEmpty(result))
@@ -74,7 +79,7 @@ namespace MobilePortalAPI.Controllers
                 {
                     return new BadRequestObjectResult("You don't have permission to do this");
                 }
-                return new BadRequestObjectResult("Can not get dealer application configuration");
+                return new BadRequestObjectResult(ex.Message);
             }
         }
 
@@ -83,6 +88,11 @@ namespace MobilePortalAPI.Controllers
         {
             try
             {
+                if (string.IsNullOrWhiteSpace(data.DealerId) || string.IsNullOrWhiteSpace(data.Application))
+                {
+                    return new BadRequestObjectResult("Invalid data");
+                }
+
                 var defaultLocations = _configuration.GetSection("ApplicationName").Get<List<string>>();
                 if (key != data.DealerApplicationConfigurationKey)
                     return new BadRequestObjectResult("The key does not match");
@@ -98,7 +108,7 @@ namespace MobilePortalAPI.Controllers
                 {
                     return new BadRequestObjectResult("You don't have permission to do this");
                 }
-                return new BadRequestObjectResult("Can not get dealer application configuration");
+                return new BadRequestObjectResult(ex.Message);
             }
         }
 
@@ -112,7 +122,20 @@ namespace MobilePortalAPI.Controllers
             }
             catch (Exception ex)
             {
-                return new BadRequestObjectResult("Can not get dealer application configuration");
+                return new BadRequestObjectResult(ex.Message);
+            }
+        }
+
+        [HttpGet("getDealers")]
+        public IActionResult GetDealers()
+        {
+            try
+            {
+                return new OkObjectResult(_dealerAppConfigService.GetDealers());
+            }
+            catch (Exception ex)
+            {
+                return new BadRequestObjectResult(ex.Message);
             }
         }
 

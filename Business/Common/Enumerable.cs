@@ -23,16 +23,22 @@ namespace Business
         Asc
     }
 
-    public enum DealerApplicationConfigurationSortFields
+    public enum DealerApplicationConfigFields
     {
         Application,
+        OriginalApplication,
         DealerId,
-        IsAllowAccess,
+        AllowAccess,
         DeviceId,
         DeviceDescription,
-        ExpiredDateString
+        ExpiredDateString,
+        ExpiredDate
     }
 
-
+    public enum LogicFilters
+    {
+        And,
+        Or
+    }
 
 }

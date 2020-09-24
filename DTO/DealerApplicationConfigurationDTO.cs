@@ -7,6 +7,7 @@ namespace DTO
     public class DealerApplicationConfigurationDTO
     {
         public string DealerId { get; set; }
+        public string OriginalApplication { get; set; }
         public string Application { get; set; }
         public string AllowAccess { get; set; }
         public string CreationEmpId { get; set; }
